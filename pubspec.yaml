@@ -1,0 +1,63 @@
+name: smartlock_app
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.5
+  intl: ^0.17.0
+  flutter_native_splash: ^2.2.19
+  flutter_launcher_icons: ^0.13.1
+  auto_size_text: ^3.0.0
+  flutter_svg: ^2.0.5
+  shared_preferences: ^2.1.0
+  mask_text_input_formatter: ^2.4.0
+  flutter_animate: ^4.1.1+1
+  transparent_image: ^2.0.1
+  shimmer: ^3.0.0
+  dartz: ^0.10.1
+  dio: ^5.1.1
+  permission_handler: ^10.2.0
+  url_launcher: ^6.1.11
+  geolocator: ^9.0.2
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Montserrat-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+          weight: 800
