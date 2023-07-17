@@ -25,9 +25,8 @@ abstract class CustomTheme {
           fontSize: 20,
         ),
         titleLarge: TextStyle(
-          color: kText.withOpacity(0.87),
-          fontWeight: FontWeight.w400,
-          fontSize: 40,
+          fontWeight: FontWeight.w700,
+          fontSize: 24,
         ),
       ),
       appBarTheme:

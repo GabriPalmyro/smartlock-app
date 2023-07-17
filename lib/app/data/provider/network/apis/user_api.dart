@@ -21,12 +21,25 @@ class UserAPI implements APIRequestRepresentable {
   @override
   dynamic body;
 
-  UserAPI._({required this.type, required this.method, this.id, this.body});
+  UserAPI._({
+    required this.type,
+    required this.method,
+    this.id,
+    this.body,
+  });
 
-  UserAPI.login(String phoneNumber)
+  UserAPI.login(dynamic body)
       : this._(
           type: UserType.login,
+          method: HTTPMethod.post,
+          body: body
+        );
+
+  UserAPI.getById(String id)
+      : this._(
+          type: UserType.getByID,
           method: HTTPMethod.get,
+          id: id,
         );
 
   @override
@@ -59,7 +72,7 @@ class UserAPI implements APIRequestRepresentable {
 
   @override
   String get url => endpoint + path;
-  
+
   @override
   String get endpoint => APIEndpoint.api;
 }

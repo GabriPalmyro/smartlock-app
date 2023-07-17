@@ -1,5 +1,7 @@
 class AppImages {
 
+  static const directory = 'assets/images';
+
   // PNG's
-  static const background = 'assets/images/omni-bg-graph.png';
+  static const ifspLogo = '$directory/ifsp-logo.png';
 }

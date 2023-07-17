@@ -34,8 +34,8 @@ class APIProvider {
   Either<AppException, dynamic> _returnResponse(Response<dynamic> response) {
     final statusCode = response.statusCode;
     final responseString = response.data;
-    // log(response.toString(), name: 'Response');
-    // log(statusCode.toString(), name: 'Response Status Code');
+    log(response.toString(), name: 'Response');
+    log(statusCode.toString(), name: 'Response Status Code');
 
     switch (statusCode) {
       case 200:
