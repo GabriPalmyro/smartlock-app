@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:smartlock_app/app/modules/splash/splash_controller.dart';
 import 'package:smartlock_app/core/configs/app_animations.dart';
-import 'package:smartlock_app/routes/pages.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -12,16 +12,8 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  @override
-  void initState() {
-    goToLogin();
-    super.initState();
-  }
 
-  void goToLogin() async {
-    await Future.delayed(5.seconds);
-    Get.offAllNamed(Routes.auth);
-  }
+  final controller = Get.find<SplashController>();
 
   @override
   Widget build(BuildContext context) {

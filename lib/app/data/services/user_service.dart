@@ -12,4 +12,5 @@ class UserService extends GetxService {
   void updateUser(User newUser) {
     user = newUser;
   }
+
 }

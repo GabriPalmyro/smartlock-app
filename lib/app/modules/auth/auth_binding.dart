@@ -9,7 +9,10 @@ class AuthBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => UserRepositoryImpl());
-    Get.lazyPut(() => AuthController());
+    Get.lazyPut(() => AuthController(
+          Get.find<UserRepositoryImpl>(),
+          Get.find<LocalStorageService>(),
+        ));
     Get.lazyPut(() => LoginController(
           Get.find<UserRepositoryImpl>(),
           Get.find<LocalStorageService>(),

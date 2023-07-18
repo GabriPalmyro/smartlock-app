@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smartlock_app/app/data/enum/auth_states_enum.dart';
 import 'package:smartlock_app/app/data/interfaces/user_repository.dart';
@@ -7,54 +6,45 @@ import 'package:smartlock_app/app/data/services/user_service.dart';
 import 'package:smartlock_app/app/widgets/snackbars/error_snackbar.dart';
 import 'package:smartlock_app/routes/pages.dart';
 
-class LoginController extends GetxController {
+class SplashController extends GetxController {
   final UserRepository _userRepository;
   final LocalStorageService _localStorageService;
 
-  LoginController(
+  SplashController(
     this._userRepository,
     this._localStorageService,
-  );
+  ) {
+    refreshLogin();
+  }
 
   final UserService userService = Get.find<UserService>();
 
   Rx<AuthStates> state = AuthStates.idle.obs;
+  Rx<AuthPage> page = AuthPage.login.obs;
 
-  late TextEditingController prontuarioController;
-  late TextEditingController passwordController;
-
-  @override
-  void onInit() {
-    prontuarioController = TextEditingController();
-    passwordController = TextEditingController();
-    super.onInit();
-  }
-
-  @override
-  void onClose() {
-    prontuarioController.dispose();
-    passwordController.dispose();
-    super.onClose();
-  }
-
-  Future<void> login() async {
+  Future<void> refreshLogin() async {
     state.value = AuthStates.loging;
+    String? userId;
 
-    final response = await _userRepository.loginWithCodeAndPassword(
-      prontuarioController.text,
-      passwordController.text,
-    );
+    userId = await _localStorageService.get(key: 'user-id');
+    
+    if (userId == null) {
+      Get.offAllNamed(Routes.auth);
+      showErrorSnackbar(
+          message: 'Ocorreu um problema ao buscar as suas informações');
+      return;
+    }
+
+    await Future.delayed(1.seconds);
+
+    final response = await _userRepository.getUserById(userId);
 
     response.fold((loginError) {
       state.value = AuthStates.error;
       showErrorSnackbar(message: loginError.details);
+      Get.toNamed(Routes.auth);
     }, (user) async {
       userService.user = user;
-
-      await _localStorageService.save(
-        key: 'user-id',
-        value: userService.user!.id,
-      );
 
       state.value = AuthStates.success;
 

@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:smartlock_app/app/data/model/classroom.dart';
 import 'package:smartlock_app/app/data/model/user.dart';
 
@@ -36,5 +37,10 @@ class Course {
       teacher: User.fromJson(json['teacher']),
       classroom: Classroom.fromJson(json['classroom']),
     );
+  }
+
+  @override
+  String toString() {
+    return 'Course(id: $id, subject: $subject, dayOfTheWeek: $dayOfTheWeek, initialDay: $initialDay, endDay: $endDay, initialTimeClass: $initialTimeClass, endTimeClass: $endTimeClass, teacher: $teacher, classroom: $classroom)';
   }
 }

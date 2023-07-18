@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:smartlock_app/app/data/interfaces/user_respository.dart';
+import 'package:smartlock_app/app/data/interfaces/user_repository.dart';
 import 'package:smartlock_app/app/data/model/user.dart';
 import 'package:smartlock_app/app/data/provider/network/api_provider.dart';
 import 'package:smartlock_app/app/data/provider/network/apis/user_api.dart';

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smartlock_app/app/data/services/user_service.dart';
+import 'package:smartlock_app/app/modules/home/classes/classes_controller.dart';
 import 'package:smartlock_app/app/modules/home/widgets/header_teacher_home.dart';
+import 'package:smartlock_app/app/modules/home/widgets/list_of_classes_from_today.dart';
 import 'package:smartlock_app/app/widgets/navigators/bottom_navigator_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
 
   final userService = Get.find<UserService>();
+  final classController = Get.find<ClassController>();
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,15 @@ class HomeView extends StatelessWidget {
       body: Stack(
         children: [
           Column(
-            children: [HeaderTeacherHome()],
+            children: [
+              HeaderTeacherHome(),
+              const ListOfClassesFromToday()
+            ],
           ),
-          const Positioned(bottom:70, child:  BottomNavigatorWidget())
+          Positioned(
+            bottom: 20 + MediaQuery.paddingOf(context).bottom,
+            child: const BottomNavigatorWidget(),
+          )
         ],
       ),
     );

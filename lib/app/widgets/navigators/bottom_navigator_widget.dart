@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartlock_app/core/configs/app_icons.dart';
 
 class BottomNavigatorWidget extends StatelessWidget {
   const BottomNavigatorWidget({super.key});
@@ -27,27 +28,27 @@ class BottomNavigatorWidget extends StatelessWidget {
             children: [
               IconButton.outlined(
                   onPressed: () {},
-                  icon: Icon(
-                    Icons.home_rounded,
+                  icon: AppIcon(
+                    icon: AppIcons.home,
                     color: theme.primary,
                   )),
               IconButton.outlined(
                   onPressed: () {},
-                  icon: Icon(
-                    Icons.pin_drop_rounded,
-                    color: theme.primary.withOpacity(0.3),
+                  icon: AppIcon(
+                    icon: AppIcons.location,
+                    color: theme.primary,
                   )),
               IconButton.outlined(
                   onPressed: () {},
-                  icon: Icon(
-                    Icons.book,
-                    color: theme.primary.withOpacity(0.3),
+                  icon: AppIcon(
+                    icon: AppIcons.book,
+                    color: theme.primary,
                   )),
               IconButton.outlined(
                   onPressed: () {},
-                  icon: Icon(
-                    Icons.person,
-                    color: theme.primary.withOpacity(0.3),
+                  icon: AppIcon(
+                    icon: AppIcons.person,
+                    color: theme.primary,
                   )),
             ],
           ),

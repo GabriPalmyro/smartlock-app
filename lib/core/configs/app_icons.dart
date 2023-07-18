@@ -4,7 +4,10 @@ import 'package:flutter_svg/svg.dart';
 const String pathIcons = 'assets/icons';
 
 class AppIcons {
-  static const onboarding1 = '$pathIcons/onboarding-1.svg';
+  static const home = '$pathIcons/home.svg';
+  static const location = '$pathIcons/location.svg';
+  static const book = '$pathIcons/book.svg';
+  static const person = '$pathIcons/person.svg';
 }
 
 class AppIcon extends StatelessWidget {

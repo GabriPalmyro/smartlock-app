@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:smartlock_app/app/modules/auth/auth_binding.dart';
 import 'package:smartlock_app/app/modules/auth/auth_view.dart';
+import 'package:smartlock_app/app/modules/home/home_binding.dart';
 import 'package:smartlock_app/app/modules/home/home_view.dart';
 import 'package:smartlock_app/app/modules/splash/splash_binding.dart';
 import 'package:smartlock_app/app/modules/splash/splash_view.dart';
@@ -27,7 +28,7 @@ abstract class AppPages {
     GetPage(
       name: Routes.home,
       page: () => HomeView(),
-      bindings: [],
+      bindings: [HomeBinding()],
     ),
   ];
 }
