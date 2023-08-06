@@ -27,11 +27,16 @@ class HeaderTeacherHome extends StatelessWidget {
                 style: textTheme.bodyMedium!.copyWith(
                     color: theme.background, fontWeight: FontWeight.w600),
               ),
-              CircleAvatar(
-                backgroundColor: kWhite.withOpacity(0.3),
-                child: const Icon(
-                  Icons.settings,
-                  color: kWhite,
+              InkWell(
+                onTap: () {
+                  userService.logout();
+                },
+                child: CircleAvatar(
+                  backgroundColor: kWhite.withOpacity(0.3),
+                  child: const Icon(
+                    Icons.settings,
+                    color: kWhite,
+                  ),
                 ),
               )
             ],

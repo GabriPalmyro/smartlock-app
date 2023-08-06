@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smartlock_app/app/modules/home/classes/classes_controller.dart';
+import 'package:smartlock_app/app/modules/courses/classes_controller.dart';
 import 'package:smartlock_app/app/modules/home/widgets/card_home_class_teacher.dart';
 
 class ListOfClassesFromToday extends GetView<ClassController> {

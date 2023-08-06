@@ -58,7 +58,7 @@ class LoginController extends GetxController {
 
       state.value = AuthStates.success;
 
-      Get.toNamed(Routes.home);
+      Get.offAllNamed(Routes.home);
     });
   }
 }

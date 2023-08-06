@@ -22,6 +22,16 @@ class LocalStorageService extends GetxService {
     } catch (e) {
       return e;
     }
+
+  }
+  Future<dynamic> delete({required String key}) async {
+    try {
+      final sharedPreferences = await SharedPreferences.getInstance();
+      final value = sharedPreferences.remove(key);
+      return value;
+    } catch (e) {
+      return e;
+    }
   }
 
   Future<bool> getBool({required String key}) async {

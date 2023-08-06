@@ -8,6 +8,9 @@ class AppIcons {
   static const location = '$pathIcons/location.svg';
   static const book = '$pathIcons/book.svg';
   static const person = '$pathIcons/person.svg';
+  static const noList = '$pathIcons/no-list.svg';
+  static const arrowRight = '$pathIcons/arrow-right.svg';
+  static const check = '$pathIcons/check.svg';
 }
 
 class AppIcon extends StatelessWidget {

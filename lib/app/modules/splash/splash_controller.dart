@@ -27,9 +27,9 @@ class SplashController extends GetxController {
     String? userId;
 
     userId = await _localStorageService.get(key: 'user-id');
-    
+
     if (userId == null) {
-      Get.offAllNamed(Routes.auth);
+      Get.offAllNamed(Routes.login);
       showErrorSnackbar(
           message: 'Ocorreu um problema ao buscar as suas informações');
       return;
@@ -42,13 +42,13 @@ class SplashController extends GetxController {
     response.fold((loginError) {
       state.value = AuthStates.error;
       showErrorSnackbar(message: loginError.details);
-      Get.toNamed(Routes.auth);
+      Get.offAllNamed(Routes.login);
     }, (user) async {
       userService.user = user;
 
       state.value = AuthStates.success;
 
-      Get.toNamed(Routes.home);
+      Get.offAllNamed(Routes.home);
     });
   }
 }

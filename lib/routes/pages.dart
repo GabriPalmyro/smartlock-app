@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
-import 'package:smartlock_app/app/modules/auth/auth_binding.dart';
-import 'package:smartlock_app/app/modules/auth/auth_view.dart';
+import 'package:smartlock_app/app/modules/auth/login_binding.dart';
+import 'package:smartlock_app/app/modules/auth/pages/auth_login_page.dart';
+import 'package:smartlock_app/app/modules/auth/pages/auth_register_page.dart';
+import 'package:smartlock_app/app/modules/auth/register_binding.dart';
+import 'package:smartlock_app/app/modules/classroom/classroom_infos_page.dart';
 import 'package:smartlock_app/app/modules/home/home_binding.dart';
 import 'package:smartlock_app/app/modules/home/home_view.dart';
 import 'package:smartlock_app/app/modules/splash/splash_binding.dart';
@@ -21,14 +24,22 @@ abstract class AppPages {
       bindings: [SplashBinding()],
     ),
     GetPage(
-      name: Routes.auth,
-      page: () => const AuthView(),
-      bindings: [AuthBinding()],
+      name: Routes.login,
+      page: () => const AuthLoginPage(),
+      bindings: [LoginBinding()],
     ),
     GetPage(
-      name: Routes.home,
-      page: () => HomeView(),
-      bindings: [HomeBinding()],
+      name: Routes.register,
+      page: () => const AuthRegisterPage(),
+      bindings: [RegisterBinding()],
     ),
+    GetPage(name: Routes.home, page: () => const HomeView(), bindings: [
+      HomeBinding()
+    ], children: [
+      GetPage(
+        name: Routes.classroom,
+        page: () => const ClassroomInfosPage(),
+      ),
+    ]),
   ];
 }

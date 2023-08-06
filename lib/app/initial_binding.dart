@@ -7,6 +7,6 @@ class InitialBinding extends Bindings {
   void dependencies() {
     Get
     ..put(LocalStorageService())
-    ..put(UserService());
+    ..put(UserService(Get.find<LocalStorageService>()));
   }
 }

@@ -5,6 +5,8 @@ part of 'pages.dart';
 // class Routes { const HOME = '/home'; }
 abstract class Routes {
   static const splash = '/';
-  static const auth = '/auth';
+  static const login = '/login';
+  static const register = '/register';
   static const home = '/home';
+  static const classroom = '/classroom';
 }

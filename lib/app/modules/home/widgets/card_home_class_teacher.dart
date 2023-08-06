@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smartlock_app/app/data/model/class.dart';
+import 'package:smartlock_app/app/modules/courses/classes_controller.dart';
 import 'package:smartlock_app/core/configs/app_colors.dart';
 import 'package:smartlock_app/utils/helper/datetime.dart';
 
-class CardHomeClassTeacher extends StatelessWidget {
+class CardHomeClassTeacher extends GetView<ClassController> {
   final Course classe;
   const CardHomeClassTeacher({super.key, required this.classe});
 
@@ -32,13 +34,13 @@ class CardHomeClassTeacher extends StatelessWidget {
             children: [
               Text(
                 classe.subject,
-                style: textTheme.bodyLarge!.copyWith(fontSize: 14),
+                style: textTheme.bodyLarge!.copyWith(fontSize: 16),
               ),
               const SizedBox(height: 6.0),
               Text(
                 '${convertDateTimeToStringTime(classe.initialTimeClass)} - ${convertDateTimeToStringTime(classe.endTimeClass)}',
                 style: textTheme.bodySmall!.copyWith(
-                    fontSize: 12,
+                    fontSize: 13,
                     fontWeight: FontWeight.w400,
                     color: theme.primary.withOpacity(0.8)),
               ),
@@ -66,16 +68,21 @@ class CardHomeClassTeacher extends StatelessWidget {
           Positioned(
             bottom: 0,
             right: 2,
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: theme.primary),
-              padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 3.0),
-              child: Center(
-                child: Text(
-                  'Abrir',
-                  style: textTheme.bodySmall!.copyWith(
-                      color: kWhite, fontSize: 10, fontWeight: FontWeight.w500),
+            child: InkWell(
+              onTap: () {
+                controller.openBottomSheetForOpenClassFromHomeView(classe);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: theme.primary),
+                padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 3.0),
+                child: Center(
+                  child: Text(
+                    'Abrir',
+                    style: textTheme.bodySmall!.copyWith(
+                        color: kWhite, fontSize: 10, fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
             ),
