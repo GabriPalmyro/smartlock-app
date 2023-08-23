@@ -44,4 +44,17 @@ class ClassroomRepositoryImpl extends ClassroomRepository {
       }
     });
   }
+
+  @override
+  Future<Either<AppException, String>> openLockFromClassroom(
+      String lockId, String userId) async {
+    final response =
+        await ClassroomAPI.openLockFromClassroom(lockId, userId).request();
+
+    return response.fold((exception) {
+      return Left(exception);
+    }, (data) {
+      return const Right('Louco e sonhado');
+    });
+  }
 }

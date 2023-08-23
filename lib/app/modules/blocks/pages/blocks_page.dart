@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:smartlock_app/app/modules/blocks/widgets/card_block_widget.dart';
 import 'package:smartlock_app/constants/block_constants.dart';
 import 'package:smartlock_app/core/configs/app_colors.dart';
-import 'package:smartlock_app/core/configs/app_images.dart';
 
 class BlocksPage extends StatelessWidget {
   const BlocksPage({super.key});
@@ -37,7 +36,7 @@ class BlocksPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CardBlockWidget(
                     block: BlocksConstant.blocks[index],
-                    image: AppImages.bloco,
+                    image: BlocksConstant.blocksImages[index],
                   ),
                 ),
                 childCount: 5,

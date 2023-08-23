@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:smartlock_app/app/data/model/access.dart';
 import 'package:smartlock_app/utils/helper/datetime.dart';
@@ -40,17 +41,20 @@ class AccessWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Murilo Varges',
-                      style: textTheme.bodyMedium!,
+                    Expanded(
+                      child: AutoSizeText(
+                        access[index].user.name,
+                        style: textTheme.bodyMedium!,
+                      ),
                     ),
+                    const SizedBox(width: 24.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
                           convertDateTimeToString(access[index].openTime),
                           style: textTheme.bodySmall!.copyWith(
-                              fontSize: 11,
+                              fontSize: 10,
                               color: theme.primary.withOpacity(0.6)),
                         ),
                         const SizedBox(height: 2.0),

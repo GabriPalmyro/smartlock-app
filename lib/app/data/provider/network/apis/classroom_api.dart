@@ -5,11 +5,12 @@ import 'package:smartlock_app/app/data/provider/network/api_endpoint.dart';
 import 'package:smartlock_app/app/data/provider/network/api_provider.dart';
 import 'package:smartlock_app/app/data/provider/network/api_request_representable.dart';
 
-enum ClassroomType { getClassroomsFromBlock, getClassroomInfosById }
+enum ClassroomType { getClassroomsFromBlock, getClassroomInfosById, openLockFromClassroom }
 
 class ClassroomAPI implements APIRequestRepresentable {
   final ClassroomType type;
   String? id;
+  String? userId;
   String? block;
 
   @override
@@ -22,6 +23,7 @@ class ClassroomAPI implements APIRequestRepresentable {
     required this.type,
     required this.method,
     this.id,
+    this.userId,
     this.block,
     this.body,
   });
@@ -40,6 +42,14 @@ class ClassroomAPI implements APIRequestRepresentable {
           id: id
         );
 
+  ClassroomAPI.openLockFromClassroom(String id, String userId)
+      : this._(
+          type: ClassroomType.openLockFromClassroom,
+          method: HTTPMethod.post,
+          id: id,
+          userId: userId
+        );
+
   @override
   String get path {
     switch (type) {
@@ -47,6 +57,8 @@ class ClassroomAPI implements APIRequestRepresentable {
         return '/classroom/block/$block';
       case ClassroomType.getClassroomInfosById:
         return '/classroom/$id';
+      case ClassroomType.openLockFromClassroom:
+        return '/classroom/$userId/open/$id';
       default:
         return '';
     }

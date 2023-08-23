@@ -11,10 +11,10 @@ class ClassroomStateWidget extends GetView<ClassroomController> {
   Widget build(BuildContext context) {
     return Obx(
       () => Container(
-        height: 20,
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 2.0),
+        height: 15,
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
         margin:
-            const EdgeInsets.symmetric(vertical: 15.0).copyWith(right: 12.0),
+            const EdgeInsets.symmetric(vertical: 16.0).copyWith(right: 12.0),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: controller.classroomInfos.value!.lock != null
@@ -31,7 +31,7 @@ class ClassroomStateWidget extends GetView<ClassroomController> {
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!
-                .copyWith(color: kWhite, fontWeight: FontWeight.w600),
+                .copyWith(color: kWhite, fontWeight: FontWeight.w600, fontSize: 11),
           ),
         ),
       ),

@@ -47,15 +47,17 @@ class NextClassesWidget extends StatelessWidget {
                         style: textTheme.bodyMedium!,
                       ),
                     ),
+                    const SizedBox(width: 24.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
                           convertDateTimeToString(DateTime.now().add(Duration(
                               days: (nextclasses[index].dayOffTheWeek -
-                                  DateTime.now().weekday).abs()))),
+                                      DateTime.now().weekday)
+                                  .abs()))),
                           style: textTheme.bodySmall!.copyWith(
-                              fontSize: 11,
+                              fontSize: 10,
                               color: theme.primary.withOpacity(0.6)),
                         ),
                         const SizedBox(height: 2.0),

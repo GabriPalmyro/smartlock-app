@@ -1,12 +1,16 @@
+import 'package:smartlock_app/app/data/model/user.dart';
+
 class Access {
   String id;
   String accessType;
+  User user;
   DateTime openTime;
   DateTime? closeTime;
 
   Access({
     required this.id,
     required this.accessType,
+    required this.user,
     required this.openTime,
     this.closeTime,
   });
@@ -15,8 +19,11 @@ class Access {
     return Access(
       id: json['id'],
       accessType: json['access_type'],
+      user: User.fromJson(json['user']),
       openTime: DateTime.parse(json['open_time']),
-      closeTime: json['close_time'] != null ? DateTime.parse(json['close_time']) : null,
+      closeTime: json['close_time'] != null
+          ? DateTime.parse(json['close_time'])
+          : null,
     );
   }
 }
