@@ -28,9 +28,7 @@ class HeaderTeacherHome extends StatelessWidget {
                     color: theme.background, fontWeight: FontWeight.w600),
               ),
               InkWell(
-                onTap: () {
-                  userService.logout();
-                },
+                onTap: () {},
                 child: CircleAvatar(
                   backgroundColor: kWhite.withOpacity(0.3),
                   child: const Icon(

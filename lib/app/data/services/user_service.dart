@@ -4,6 +4,9 @@ import 'package:smartlock_app/app/data/services/local_storage_service.dart';
 import 'package:smartlock_app/routes/pages.dart';
 
 class UserService extends GetxService {
+
+  
+
   final LocalStorageService _localStorageService;
 
   UserService(

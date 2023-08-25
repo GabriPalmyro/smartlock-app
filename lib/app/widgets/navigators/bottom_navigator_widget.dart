@@ -72,8 +72,7 @@ class BottomNavigatorWidget extends GetView<HomeController> {
                   duration: const Duration(milliseconds: 120),
                   child: IconButton.outlined(
                       onPressed: () {
-                        // controller.onItemTapped(3);
-                        showErrorSnackbar(message: 'Não disponível ainda');
+                        controller.onItemTapped(3);
                       },
                       icon: AppIcon(
                         icon: AppIcons.person,

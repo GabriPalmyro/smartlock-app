@@ -6,8 +6,8 @@ import 'package:smartlock_app/app/widgets/buttons/primary_button.dart';
 import 'package:smartlock_app/app/widgets/buttons/secondary_button.dart';
 import 'package:smartlock_app/app/widgets/inputs/custom_text_field.dart';
 import 'package:smartlock_app/app/widgets/inputs/custom_text_field_password.dart';
+import 'package:smartlock_app/app/widgets/snackbars/error_snackbar.dart';
 import 'package:smartlock_app/core/configs/app_images.dart';
-import 'package:smartlock_app/routes/pages.dart';
 
 class AuthLoginPage extends GetView<LoginController> {
   const AuthLoginPage({super.key});
@@ -74,7 +74,10 @@ class AuthLoginPage extends GetView<LoginController> {
               SecondaryButtonWidget(
                   size: Size(width, 45),
                   onTap: () {
-                    Get.toNamed(Routes.register);
+                    showErrorSnackbar(
+                        message:
+                            'Desculpe, criação de conta para alunos ainda não está disponível. Caso seja um professor entre em contato com o suporte',);
+                    // Get.toNamed(Routes.register);
                   },
                   label: 'Criar uma Conta'),
               SizedBox(height: MediaQuery.paddingOf(context).bottom + 280),

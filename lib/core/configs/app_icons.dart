@@ -11,6 +11,7 @@ class AppIcons {
   static const noList = '$pathIcons/no-list.svg';
   static const arrowRight = '$pathIcons/arrow-right.svg';
   static const check = '$pathIcons/check.svg';
+  static const edit = '$pathIcons/edit.svg';
 }
 
 class AppIcon extends StatelessWidget {
