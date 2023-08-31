@@ -36,3 +36,11 @@ final List<String> daysOfWeek = [
   'Sáb',
   'Dom'
 ];
+
+DateTime calculateNextClassDate(int classDayOfWeek) {
+    final DateTime now = DateTime.now();
+    final int daysUntilClass = ((classDayOfWeek - now.weekday + 7) % 7) + 1;
+    final DateTime nextClassDate = now.add(Duration(days: daysUntilClass));
+
+    return nextClassDate;
+  }

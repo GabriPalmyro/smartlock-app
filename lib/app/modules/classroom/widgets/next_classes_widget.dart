@@ -52,10 +52,7 @@ class NextClassesWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          convertDateTimeToString(DateTime.now().add(Duration(
-                              days: (nextclasses[index].dayOffTheWeek -
-                                      DateTime.now().weekday)
-                                  .abs()))),
+                          convertDateTimeToString(calculateNextClassDate(nextclasses[index].dayOffTheWeek)),
                           style: textTheme.bodySmall!.copyWith(
                               fontSize: 10,
                               color: theme.primary.withOpacity(0.6)),
