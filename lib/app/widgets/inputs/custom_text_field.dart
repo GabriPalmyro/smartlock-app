@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String hint;
   final TextEditingController controller;
+  final FocusNode? focusNode;
 
   const CustomTextField(
-      {super.key, required this.hint, required this.controller});
+      {super.key, required this.hint, required this.controller,  this.focusNode});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       style: textTheme.bodySmall!
           .copyWith(fontSize: 14, fontWeight: FontWeight.w500),
+          focusNode: focusNode,
       decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),

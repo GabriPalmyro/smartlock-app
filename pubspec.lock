@@ -195,6 +195,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      sha256: b39c753e909d4796906c5696a14daf33639a76e017136c8d82bf3e620ce5bb8e
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -277,14 +285,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  lottie:
-    dependency: "direct main"
-    description:
-      name: lottie
-      sha256: f461105d3a35887b27089abf9c292334478dd292f7b47ecdccb6ae5c37a22c80
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.4.0"
   mask_text_input_formatter:
     dependency: "direct main"
     description:

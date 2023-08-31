@@ -15,7 +15,7 @@ class Lock {
   factory Lock.fromJson(Map<String, dynamic> json) {
     return Lock(
       id: json['id'],
-      state: json['state'] == false ? LockState.close : LockState.open,
+      state: json['state'] == true ? LockState.close : LockState.open,
       name: json['name'],
     );
   }

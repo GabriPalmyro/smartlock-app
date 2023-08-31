@@ -57,10 +57,14 @@ class AuthLoginPage extends GetView<LoginController> {
               const SizedBox(height: 12.0),
               CustomTextField(
                   hint: 'Prontuário',
-                  controller: controller.prontuarioController),
+                  controller: controller.prontuarioController,
+                  focusNode: controller.prontuarioNode),
               const SizedBox(height: 12.0),
               CustomTextFieldPassword(
-                  hint: 'Senha', controller: controller.passwordController),
+                hint: 'Senha',
+                controller: controller.passwordController,
+                focusNode: controller.passwordNode,
+              ),
               const SizedBox(height: 24.0),
               Obx(() => PrimaryButtonWidget(
                     size: Size(width, 45),
@@ -75,8 +79,9 @@ class AuthLoginPage extends GetView<LoginController> {
                   size: Size(width, 45),
                   onTap: () {
                     showErrorSnackbar(
-                        message:
-                            'Desculpe, criação de conta para alunos ainda não está disponível. Caso seja um professor entre em contato com o suporte',);
+                      message:
+                          'Desculpe, criação de conta para alunos ainda não está disponível. Caso seja um professor entre em contato com o suporte',
+                    );
                     // Get.toNamed(Routes.register);
                   },
                   label: 'Criar uma Conta'),

@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class CustomTextFieldPassword extends StatefulWidget {
   final String hint;
   final TextEditingController controller;
+  final FocusNode? focusNode;
 
   const CustomTextFieldPassword(
-      {super.key, required this.hint, required this.controller});
+      {super.key,
+      required this.hint,
+      required this.controller,
+      this.focusNode});
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -22,6 +26,7 @@ class _CustomTextFieldState extends State<CustomTextFieldPassword> {
       controller: widget.controller,
       style: textTheme.bodySmall!
           .copyWith(fontSize: 14, fontWeight: FontWeight.w500),
+      focusNode: widget.focusNode,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

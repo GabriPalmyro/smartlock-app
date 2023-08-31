@@ -28,7 +28,7 @@ dependencies:
   permission_handler: ^10.2.0
   url_launcher: ^6.1.11
   # geolocator: ^9.0.2
-  lottie: ^2.4.0
+  flutter_spinkit: ^5.2.0
 
   cupertino_icons: ^1.0.2
 

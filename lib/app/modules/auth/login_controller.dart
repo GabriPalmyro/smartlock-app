@@ -23,10 +23,15 @@ class LoginController extends GetxController {
   late TextEditingController prontuarioController;
   late TextEditingController passwordController;
 
+  late FocusNode prontuarioNode;
+  late FocusNode passwordNode;
+
   @override
   void onInit() {
     prontuarioController = TextEditingController();
     passwordController = TextEditingController();
+    prontuarioNode = FocusNode();
+    passwordNode = FocusNode();
     super.onInit();
   }
 
@@ -34,11 +39,16 @@ class LoginController extends GetxController {
   void onClose() {
     prontuarioController.dispose();
     passwordController.dispose();
+    prontuarioNode.dispose();
+    passwordNode.dispose;
     super.onClose();
   }
 
   Future<void> login() async {
     state.value = AuthStates.loging;
+
+    prontuarioNode.unfocus();
+    passwordNode.unfocus();
 
     final response = await _userRepository.loginWithCodeAndPassword(
       prontuarioController.text,
