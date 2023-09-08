@@ -19,12 +19,26 @@ class ClassController extends GetxController {
   final UserService userService = Get.find<UserService>();
 
   final RxList<Course> classesFromToday = RxList<Course>.empty();
+  final RxList<Course> allClasses = RxList<Course>.empty();
   Rx<ClassStates> state = ClassStates.idle.obs;
 
   @override
   void onInit() {
     getClassesForToday();
+    getAllClasses();
     super.onInit();
+  }
+
+  void getAllClasses() async {
+    final response =
+        await _classRepository.getAllTeacherClasses(userService.user!.id);
+
+    response.fold((l) {
+      log(l.details, name: 'Error Get All Classes');
+    }, (classes) {
+      allClasses.value = classes;
+      allClasses.sort((a, b) => a.dayOfTheWeek.compareTo(b.dayOfTheWeek));
+    });
   }
 
   void getClassesForToday() async {

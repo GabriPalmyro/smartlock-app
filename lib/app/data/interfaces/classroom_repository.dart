@@ -11,4 +11,6 @@ abstract class ClassroomRepository {
       String classroomId);
   Future<Either<AppException, String>> openLockFromClassroom(
       String lockId, String userId);
+  Future<Either<AppException, String>> closeLockFromClassroom(
+      String lockId);
 }

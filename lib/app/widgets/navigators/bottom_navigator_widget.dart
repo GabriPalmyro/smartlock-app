@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smartlock_app/app/modules/home/home_controller.dart';
-import 'package:smartlock_app/app/widgets/snackbars/error_snackbar.dart';
 import 'package:smartlock_app/core/configs/app_icons.dart';
 
 class BottomNavigatorWidget extends GetView<HomeController> {
@@ -59,8 +58,7 @@ class BottomNavigatorWidget extends GetView<HomeController> {
                   duration: const Duration(milliseconds: 120),
                   child: IconButton.outlined(
                       onPressed: () {
-                        // controller.onItemTapped(2);
-                        showErrorSnackbar(message: 'Não disponível ainda');
+                        controller.onItemTapped(2);
                       },
                       icon: AppIcon(
                         icon: AppIcons.book,

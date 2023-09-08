@@ -25,7 +25,8 @@ class HeaderTeacherHome extends StatelessWidget {
               Text(
                 'Olá, ${userService.user!.name.split(' ').first}',
                 style: textTheme.bodyMedium!.copyWith(
-                    color: theme.background, fontWeight: FontWeight.w600),
+                  fontSize: 22,
+                    color: theme.background, fontWeight: FontWeight.w700),
               ),
               InkWell(
                 onTap: () {},

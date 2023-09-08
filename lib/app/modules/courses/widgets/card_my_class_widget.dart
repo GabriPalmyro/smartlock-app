@@ -6,9 +6,9 @@ import 'package:smartlock_app/core/configs/app_colors.dart';
 import 'package:smartlock_app/routes/pages.dart';
 import 'package:smartlock_app/utils/helper/datetime.dart';
 
-class CardHomeClassTeacher extends GetView<ClassroomController> {
+class CardMyClassTeacher extends GetView<ClassroomController> {
   final Course classe;
-  const CardHomeClassTeacher({super.key, required this.classe});
+  const CardMyClassTeacher({super.key, required this.classe});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class CardHomeClassTeacher extends GetView<ClassroomController> {
               ),
               const SizedBox(height: 6.0),
               Text(
-                '${convertDateTimeToStringTime(classe.initialTimeClass)} - ${convertDateTimeToStringTime(classe.endTimeClass)}',
+                '${weekdays[classe.dayOfTheWeek]} - ${convertDateTimeToStringTime(classe.initialTimeClass)} - ${convertDateTimeToStringTime(classe.endTimeClass)}',
                 style: textTheme.bodySmall!.copyWith(
                     fontSize: 13,
                     fontWeight: FontWeight.w400,

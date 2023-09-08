@@ -5,7 +5,7 @@ import 'package:smartlock_app/app/data/provider/network/api_endpoint.dart';
 import 'package:smartlock_app/app/data/provider/network/api_provider.dart';
 import 'package:smartlock_app/app/data/provider/network/api_request_representable.dart';
 
-enum ClassType { getClassesForTeacherFromToday }
+enum ClassType { getClassesForTeacherFromToday, getAllTeacherClasses }
 
 class ClassAPI implements APIRequestRepresentable {
   final ClassType type;
@@ -30,11 +30,19 @@ class ClassAPI implements APIRequestRepresentable {
             method: HTTPMethod.get,
             id: id);
 
+  ClassAPI.getAllTeacherClasses(String id)
+      : this._(
+            type: ClassType.getAllTeacherClasses,
+            method: HTTPMethod.get,
+            id: id);
+
   @override
   String get path {
     switch (type) {
       case ClassType.getClassesForTeacherFromToday:
         return '/class/teacher/$id/today';
+      case ClassType.getAllTeacherClasses:
+        return '/class/teacher/$id';
       default:
         return '';
     }

@@ -24,4 +24,24 @@ class ClassRepositoryImpl extends ClassRepository {
       }
     });
   }
+
+  @override
+  Future<Either<AppException, List<Course>>> getAllTeacherClasses(
+      String id) async {
+    final response = await ClassAPI.getAllTeacherClasses(id).request();
+
+    return response.fold((exception) {
+      return Left(exception);
+    }, (data) {
+      try {
+        final List<dynamic> jsonList = data;
+        final List<Course> courses =
+            jsonList.map((json) => Course.fromJson(json)).toList();
+        return Right(courses);
+      } catch (e) {
+        return Left(FetchDataException(
+            'Ocorreu um problema. Tente novamente mais tarde, ou entre em contato com o suporte'));
+      }
+    });
+  }
 }

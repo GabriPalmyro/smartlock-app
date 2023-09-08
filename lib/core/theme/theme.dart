@@ -8,18 +8,18 @@ abstract class CustomTheme {
     return ThemeData(
       fontFamily: AppTypography.Montserrat,
       primaryColor: kPrimary,
-      textTheme: TextTheme(
-        bodySmall: const TextStyle(
+      textTheme: const TextTheme(
+        bodySmall: TextStyle(
           color: kText,
           fontWeight: FontWeight.w400,
           fontSize: 16,
         ),
-        bodyMedium: const TextStyle(
+        bodyMedium: TextStyle(
           color: kText,
           fontWeight: FontWeight.w500,
           fontSize: 18,
         ),
-        bodyLarge: const TextStyle(
+        bodyLarge: TextStyle(
           color: kText,
           fontWeight: FontWeight.w600,
           fontSize: 20,

@@ -15,6 +15,17 @@ List<String> months = [
   'Dezembro'
 ];
 
+List<String> weekdays = [
+  'Segundas',
+  'Terças',
+  'Quartas',
+  'Quintas',
+  'Sextas',
+  'Sábados',
+];
+
+String convertWeekdayToString(int day) => weekdays[day];
+
 String convertDateTimeToString(DateTime date) =>
     '${date.day} de ${months[date.month - 1]} de ${date.year}';
 
@@ -38,9 +49,9 @@ final List<String> daysOfWeek = [
 ];
 
 DateTime calculateNextClassDate(int classDayOfWeek) {
-    final DateTime now = DateTime.now();
-    final int daysUntilClass = ((classDayOfWeek - now.weekday + 7) % 7) + 1;
-    final DateTime nextClassDate = now.add(Duration(days: daysUntilClass));
+  final DateTime now = DateTime.now();
+  final int daysUntilClass = ((classDayOfWeek - now.weekday + 7) % 7) + 1;
+  final DateTime nextClassDate = now.add(Duration(days: daysUntilClass));
 
-    return nextClassDate;
-  }
+  return nextClassDate;
+}
