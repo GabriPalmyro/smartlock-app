@@ -45,7 +45,8 @@ class ListOfClassroomsModal extends GetView<ClassroomController> {
                   child: InkWell(
                     splashColor: theme.primary.withOpacity(0.5),
                     onTap: () async {
-                      await controller.getClassroomInfosById(controller.listOfClassroomByBlock[index].id);
+                      controller.getClassroomInfosById(
+                          controller.listOfClassroomByBlock[index].id);
                       Get.toNamed(Routes.home + Routes.classroom);
                     },
                     child: Ink(
